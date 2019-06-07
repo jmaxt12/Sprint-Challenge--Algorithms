@@ -94,9 +94,41 @@ class SortingRobot:
 
     def sort(self):
         """
+        Rules
+            * You may use any pre-defined robot methods.
+            * You may NOT modify any pre-defined robot methods.
+            * You may use logical operators. (`if`, `and`, `or`, `not`, etc.)
+            * You may use comparison operators. (`>`, `>=`, `<`, `<=`, `==`, `is`, etc.)
+            * You may use iterators. (`while`, `for`, `break`, `continue`)
+            * You may NOT store any variables. (`=`)
+            * You may NOT access any instance variables directly. (`self._anything`)
+            * You may NOT use any Python libraries or class methods. (`sorted()`, etc.)
+            * You may define robot helper methods, as long as they follow all the rules.
+        
         Sort the robot's list.
+
+        Logic 
+            While the robot can move to the right....
+                If compare_item is -1 then swap_item and move_right.
+                else just move right.
+            While the robot can move left...
+                If complare_item is 1 then swap_item and move left.
+                else just move left.
         """
         # Fill this out
+        while self.can_move_right(): 
+            if self.compare_item() == -1:
+                self.swap_item()
+                self.move_right()
+            else:
+                self.move_right()
+        while self.can_move_left():
+            if self.compare_item() == 1:
+                self.swap_item()
+                self.move_left()
+            else:
+                self.move_left()
+        
         pass
 
 
